@@ -25,3 +25,8 @@ class Room:
         for song in self.playlist:
             if title == song.title:
                 return song 
+    
+    def find_song_by_artist(self, artist):
+        for song in self.playlist:
+            if artist == song.artist:
+                return song 

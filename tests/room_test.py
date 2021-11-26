@@ -56,3 +56,9 @@ class TestRoom(unittest.TestCase):
         self.room1.add_song(self.song2)      
         self.assertEqual(self.song2, self.room1.find_song_by_title("Ridin' Solo"))
         self.assertEqual(None, self.room1.find_song_by_title("Trumpets"))
+    
+    def test_room_find_song_by_artist(self):
+        self.room1.add_song(self.song1)
+        self.room1.add_song(self.song2)      
+        self.assertEqual(self.song2, self.room1.find_song_by_artist("Jason Derulo"))
+        self.assertEqual(None, self.room1.find_song_by_artist("Rick Astley"))
