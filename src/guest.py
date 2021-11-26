@@ -4,3 +4,6 @@ class Guest:
         self.name = name 
         self.group_size = group_size
         self.wallet = wallet  
+    
+    def get_group_size(self):
+        return self.group_size 

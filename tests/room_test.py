@@ -7,9 +7,10 @@ from src.song import Song
 class TestRoom(unittest.TestCase):
     
     def setUp(self):
-        self.guest1 = Guest("Jay Pritchard", 4, 200.00)
+        self.guest1 = Guest("Jay Pritchard", 6, 200.00)
         self.guest2 = Guest("Cameron Tucker", 3, 100.00)
         self.room1 = Room("Cheviot", 10, 50)
+        self.room2 = Room("Braid", 5, 25)
         self.song1 = Song("Dance Dance", "Fall Out Boy")
         self.song2 = Song("Ridin' Solo", "Jason Derulo")
 
@@ -63,4 +64,16 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.song2, self.room1.find_song_by_artist("Jason Derulo"))
         self.assertEqual(None, self.room1.find_song_by_artist("Rick Astley"))
     
-    # def test_
+    # def test_remaining_capacity(self):
+    #     self.room1.add_guest(self.guest1)
+    #     self.assertEqual(4, ((self.room1.capacity) -= (guest1.group_size)))
+
+
+    # def test_capacity_of_room_accommodate_guest_group_size(self):
+    #     self.room2.add_guest(self.guest1)
+    #     self.assertEqual(Fa
+
+
+
+
+
