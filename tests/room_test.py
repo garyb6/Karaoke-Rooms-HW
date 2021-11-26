@@ -9,7 +9,7 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.guest1 = Guest("Jay Pritchard", 4, 200.00)
         self.guest2 = Guest("Cameron Tucker", 3, 100.00)
-        self.room1 = Room("Cheviot", 10)
+        self.room1 = Room("Cheviot", 10, 50)
         self.song1 = Song("Dance Dance", "Fall Out Boy")
         self.song2 = Song("Ridin' Solo", "Jason Derulo")
 
@@ -19,8 +19,8 @@ class TestRoom(unittest.TestCase):
     def test_room_has_capacity(self):
         self.assertEqual(10, self.room1.capacity) 
 
-    # def test_room_has_entry_fee(self):
-    #     self.assertEqual(5, self.room.entry_fee) 
+    def test_room_has_entry_fee(self):
+        self.assertEqual(50, self.room1.entry_fee) 
 
     def test_guest_list_starts_off_empty(self):
         self.assertEqual([], self.room1.guest_list)
@@ -62,3 +62,5 @@ class TestRoom(unittest.TestCase):
         self.room1.add_song(self.song2)      
         self.assertEqual(self.song2, self.room1.find_song_by_artist("Jason Derulo"))
         self.assertEqual(None, self.room1.find_song_by_artist("Rick Astley"))
+    
+    # def test_
