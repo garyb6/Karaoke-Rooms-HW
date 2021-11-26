@@ -20,3 +20,8 @@ class Room:
 
     def add_song(self, song):
         self.playlist.append(song)
+
+    def find_song_by_title(self, title):
+        for song in self.playlist:
+            if title == song.title:
+                return song 
