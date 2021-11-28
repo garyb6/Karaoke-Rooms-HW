@@ -9,8 +9,8 @@ class TestRoom(unittest.TestCase):
     def setUp(self):
         self.guest1 = Guest("Jay Pritchard", 6, 200.00)
         self.guest2 = Guest("Cameron Tucker", 3, 100.00)
-        self.room1 = Room("Cheviot", 10, 50)
-        self.room2 = Room("Braid", 5, 25)
+        self.room1 = Room("Cheviot", 10, 50.00)
+        self.room2 = Room("Braid", 5, 25.00)
         self.song1 = Song("Dance Dance", "Fall Out Boy")
         self.song2 = Song("Ridin' Solo", "Jason Derulo")
 
@@ -82,12 +82,12 @@ class TestRoom(unittest.TestCase):
 
     def test_guest_cannot_afford_room(self):
         poor_guest = Guest("Luke Dunphy", 5, 10.00)
-        self.assertEqual(False, poor_guest.wallet(self.room2.entry_fee))
-        
+        self.assertEqual(False, poor_guest.wallet >= self.room2.entry_fee)
+
     # def test_can_guest_pays_entry_fee(self):
     #     self.room2.add_guest(self.guest2)
-    #     self.assertEqual (75, self.guest2.wallet)
-    #     self.assertEqual (125, self.room2.till)
+    #     self.assertEqual (75.00, self.guest2.wallet)
+    #     self.assertEqual (125.00, self.room2.till)
 
 
 
