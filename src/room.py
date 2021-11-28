@@ -44,7 +44,7 @@ class Room:
         if guest.wallet >= self.entry_fee:
             return True
 
-    # def guest_pays_entry_fee(self, guest):
-    #     if self.can_guest_enter_room(guest) and self.guest_can_afford_room:
-    #         guest.wallet -= self.entry_fee
-    #         self.till += self.entry_fee
+    def guest_pays_entry_fee(self, guest):
+        if self.can_guest_enter_room(guest) and self.guest_can_afford_room:
+            guest.wallet -= self.entry_fee
+            self.till += self.entry_fee

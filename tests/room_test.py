@@ -84,10 +84,10 @@ class TestRoom(unittest.TestCase):
         poor_guest = Guest("Luke Dunphy", 5, 10.00)
         self.assertEqual(False, poor_guest.wallet >= self.room2.entry_fee)
 
-    # def test_can_guest_pays_entry_fee(self):
-    #     self.room2.add_guest(self.guest2)
-    #     self.assertEqual (75.00, self.guest2.wallet)
-    #     self.assertEqual (125.00, self.room2.till)
+    def test_can_guest_pays_entry_fee(self):
+        self.room2.add_guest(self.guest2)
+        self.assertEqual (75.00, self.guest2.wallet)
+        self.assertEqual (125.00, self.room2.till)
 
 
 
