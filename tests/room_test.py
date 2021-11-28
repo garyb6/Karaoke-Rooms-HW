@@ -75,6 +75,16 @@ class TestRoom(unittest.TestCase):
     def test_remaining_capacity(self):
         self.room2.add_guest(self.guest2)
         self.assertEqual(2, self.room2.capacity - self.guest2.group_size)
+    
+    def test_guest_can_afford_room(self):
+        self.room2.add_guest(self.guest2)
+        self.assertEqual(True, self.guest2.wallet >= self.room2.entry_fee)
+
+    
+    # def test_can_guest_pays_entry_fee(self):
+    #     self.room2.add_guest(self.guest2)
+    #     self.assertEqual (75, self.guest2.wallet)
+    #     self.assertEqual (125, self.room2.till)
 
 
 
