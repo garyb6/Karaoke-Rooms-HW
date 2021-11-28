@@ -64,14 +64,18 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(self.song2, self.room1.find_song_by_artist("Jason Derulo"))
         self.assertEqual(None, self.room1.find_song_by_artist("Rick Astley"))
     
-    # def test_remaining_capacity(self):
-    #     self.room1.add_guest(self.guest1)
-    #     self.assertEqual(4, ((self.room1.capacity) -= (guest1.group_size)))
+    def test_can_guest_enter_room(self): 
+        self.room2.add_guest(self.guest2)
+        self.assertEqual(True, self.guest2.group_size <= self.room2.capacity)
+    
+    def test_guest_cannot_enter_room(self):
+        self.room2.add_guest(self.guest1)
+        self.assertEqual(False, self.guest1.group_size <= self.room2.capacity)
+    
+    def test_remaining_capacity(self):
+        self.room2.add_guest(self.guest2)
+        self.assertEqual(2, self.room2.capacity - self.guest2.group_size)
 
-
-    # def test_capacity_of_room_accommodate_guest_group_size(self):
-    #     self.room2.add_guest(self.guest1)
-    #     self.assertEqual(Fa
 
 
 

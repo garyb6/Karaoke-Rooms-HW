@@ -15,6 +15,3 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_has_wallet(self):
         self.assertEqual(200.00, self.guest.wallet) 
-    
-    def test_get_group_size(self):
-        return self.guest.group_size

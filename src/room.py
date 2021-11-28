@@ -30,3 +30,11 @@ class Room:
         for song in self.playlist:
             if artist == song.artist:
                 return song 
+    
+    def can_guest_enter_room(self, guest):
+        amount = guest.group_size
+        if amount <= self.capacity:
+            return True 
+    
+    def remaining_capacity(self, guest):
+        self.capacity -= guest.group_size
