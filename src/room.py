@@ -6,7 +6,7 @@ class Room:
         self.playlist = []
         self.capacity = capacity 
         self.entry_fee = entry_fee
-        self.till = 100
+        self.till = 100.00
 
     def add_guest(self, guest):
         self.guest_list.append(guest)
@@ -44,7 +44,12 @@ class Room:
         if guest.wallet >= self.entry_fee:
             return True
 
-    def guest_pays_entry_fee(self, guest):
-        if self.can_guest_enter_room(guest) and self.guest_can_afford_room:
-            guest.wallet -= self.entry_fee
-            self.till += self.entry_fee
+    # def guest_pays_entry_fee(self, guest):
+    #     if self.can_guest_enter_room(guest) and self.guest_can_afford_room(guest):
+    #         guest.wallet -= self.entry_fee
+    #         self.till += self.entry_fee
+    # not working 
+
+    def favourite_song_in_playlist(self, guest, song):
+        if guest.favourite_song == song.title:
+            return "Whoo!!!"
