@@ -33,22 +33,21 @@ class Room:
                 return song 
     
     def can_guest_enter_room(self, guest):
-        amount = guest.group_size
-        if amount <= self.capacity:
-            return True 
+        # amount = guest.group_size
+        # if amount <= self.capacity:
+        #     return True 
+        return guest.group_size <= self.capacity
     
     def remaining_capacity(self, guest):
         self.capacity -= guest.group_size
     
     def guest_can_afford_room(self, guest):
-        if guest.wallet >= self.entry_fee:
-            return True
+        return guest.wallet >= self.entry_fee
 
-    # def guest_pays_entry_fee(self, guest):
-    #     if self.can_guest_enter_room(guest) and self.guest_can_afford_room(guest):
-    #         guest.wallet -= self.entry_fee
-    #         self.till += self.entry_fee
-    # not working 
+    def guest_pays_entry_fee(self, guest):
+        if self.can_guest_enter_room(guest) and self.guest_can_afford_room(guest):
+            guest.wallet -= self.entry_fee
+            self.till += self.entry_fee
 
     def favourite_song_in_playlist(self, guest, song):
         if guest.favourite_song == song.title:

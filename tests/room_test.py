@@ -83,14 +83,14 @@ class TestRoom(unittest.TestCase):
 
     def test_guest_cannot_afford_room(self):
         poor_guest = Guest("Luke Dunphy", 5, 10.00, "The Black Parade")
-        self.assertEqual(False, poor_guest.wallet >= self.room2.entry_fee)
+        self.assertTrue(poor_guest.wallet < self.room2.entry_fee)
 
-    # def test_guest_pays_entry_fee(self):
-    #     rich_guest = Guest ("Phil Dunphy", 1, 500.00)
-    #     self.room2.guest_can_afford_room(rich_guest)
-    #     self.room2.can_guest_enter_room(rich_guest)
-    #     self.assertEqual (475.00, rich_guest.wallet)
-    #     self.assertEqual (125.00, self.room2.till)
+    def test_guest_pays_entry_fee(self):
+        self.assertTrue(self.room2.guest_can_afford_room(self.guest2))
+        self.assertTrue(self.room2.can_guest_enter_room(self.guest2))
+        self.room2.guest_pays_entry_fee(self.guest2)
+        self.assertEqual (75.00, self.guest2.wallet)
+        self.assertEqual (125.00, self.room2.till)
 #  Traceback (most recent call last):
 #   File "/Users/garybennett/codeclan_work/week_02/day_05/homework/codeclan_caraoke/tests/room_test.py", line 91, in test_guest_pays_entry_fee
 #     self.assertEqual (475.00, rich_guest.wallet)
