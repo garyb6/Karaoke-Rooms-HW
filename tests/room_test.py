@@ -91,10 +91,7 @@ class TestRoom(unittest.TestCase):
         self.room2.guest_pays_entry_fee(self.guest2)
         self.assertEqual (75.00, self.guest2.wallet)
         self.assertEqual (125.00, self.room2.till)
-#  Traceback (most recent call last):
-#   File "/Users/garybennett/codeclan_work/week_02/day_05/homework/codeclan_caraoke/tests/room_test.py", line 91, in test_guest_pays_entry_fee
-#     self.assertEqual (475.00, rich_guest.wallet)
-# AssertionError: 475.0 != 500.0
+
 
     def guest_favourite_in_playlist(self):
         self.room2.add_guest(self.guest2)
